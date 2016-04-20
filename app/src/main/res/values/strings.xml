@@ -5,4 +5,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="nav_title_settings">Instellingen</string>
+    <string name="nav_title_reservation">Reserveren</string>
+    <string name="nav_title_home">Home</string>
 </resources>
