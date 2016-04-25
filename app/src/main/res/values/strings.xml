@@ -8,4 +8,8 @@
     <string name="nav_title_settings">Instellingen</string>
     <string name="nav_title_reservation">Reserveren</string>
     <string name="nav_title_home">Home</string>
+    <string name="error_title">Oops! Er ging iets fout!</string>
+    <string name="error_msg">Probeer het nog een keer.</string>
+    <string name="error_positive_button_msg">OK</string>
+    <string name="network_unavailable_message">Netwerk in niet beschikbaar!</string>
 </resources>

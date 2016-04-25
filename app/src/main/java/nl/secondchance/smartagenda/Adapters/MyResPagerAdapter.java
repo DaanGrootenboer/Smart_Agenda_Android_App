@@ -1,4 +1,4 @@
-package nl.secondchance.smartagenda.Adapter;
+package nl.secondchance.smartagenda.Adapters;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import nl.secondchance.smartagenda.Model.Reservation;
+import nl.secondchance.smartagenda.Models.Reservation;
 import nl.secondchance.smartagenda.R;
 
 public class MyResPagerAdapter extends PagerAdapter {

@@ -1,4 +1,4 @@
-package nl.secondchance.smartagenda.Model;
+package nl.secondchance.smartagenda.Models;
 
 /**
  * Created by daangrootenboer on 20-04-16.
