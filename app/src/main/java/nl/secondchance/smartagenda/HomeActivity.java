@@ -1,6 +1,7 @@
 package nl.secondchance.smartagenda;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -126,7 +127,8 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_reservation) {
 
         } else if (id == R.id.nav_settings) {
-
+            Intent intent = new Intent(getApplicationContext(),SettingsActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
