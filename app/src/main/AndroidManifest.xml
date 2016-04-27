@@ -26,6 +26,11 @@
             android:label="@string/title_activity_settings"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".ReservationActivity"
+            android:label="@string/title_activity_reservation"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

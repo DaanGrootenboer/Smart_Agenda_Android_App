@@ -36,7 +36,7 @@ public class MyResPagerAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        View itemView = mLayoutInflater.inflate(R.layout.fragment_my_res_widget, container, false);
+        View itemView = mLayoutInflater.inflate(R.layout.slide_item_my_res_widget, container, false);
 
         TextView room = (TextView) itemView.findViewById(R.id.widget_my_res_room);
         TextView date = (TextView) itemView.findViewById(R.id.widget_my_res_date);

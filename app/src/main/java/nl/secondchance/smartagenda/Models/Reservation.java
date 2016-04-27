@@ -10,6 +10,14 @@ public class Reservation {
     private String mEtime;
     private String mScenario;
 
+    public Reservation (String room, String date, String btime, String etime, String scenario) {
+        this.mRoom = room;
+        this.mDate = date;
+        this.mBtime = btime;
+        this.mEtime = etime;
+        this.mScenario = scenario;
+    }
+
     public String getRoom() {
         return mRoom;
     }

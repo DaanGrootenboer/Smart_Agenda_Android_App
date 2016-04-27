@@ -63,20 +63,8 @@ public class HomeActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         // dummie data
-        Reservation testReservation = new Reservation();
-        testReservation.setRoom("kamer 21");
-        testReservation.setDate("Vandaag");
-        testReservation.setBtime("1 uur");
-        testReservation.setEtime("2 uur");
-        testReservation.setScenario("presentatie");
-        Reservation testReservation2 = new Reservation();
-        testReservation2.setRoom("kamer 77");
-        testReservation2.setDate("10 april");
-        testReservation2.setBtime("4 uur");
-        testReservation2.setEtime("5 uur");
-        testReservation2.setScenario("custom");
-        list.add(testReservation);
-        list.add(testReservation2);
+        list.add(new Reservation("kamer 21", "Vandaag", "1 uur", "2 uur", "presentatie"));
+        list.add(new Reservation("kamer 22", "Vandaag", "1 uur", "2 uur", "presentatie"));
         getData();
 
         mPagerAdapter = new MyResPagerAdapter(getApplicationContext(), list);
@@ -125,7 +113,8 @@ public class HomeActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
 
         } else if (id == R.id.nav_reservation) {
-
+            Intent intent = new Intent(getApplicationContext(),ReservationActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_settings) {
             Intent intent = new Intent(getApplicationContext(),SettingsActivity.class);
             startActivity(intent);
