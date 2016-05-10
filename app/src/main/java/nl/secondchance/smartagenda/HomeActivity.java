@@ -63,12 +63,12 @@ public class HomeActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         // dummie data
-        list.add(new Reservation("kamer 21", "Vandaag", "1 uur", "2 uur", "presentatie"));
-        list.add(new Reservation("kamer 22", "Vandaag", "1 uur", "2 uur", "presentatie"));
+        list.add(new Reservation("Kamer 21", "Vandaag", "Morgen", "1 uur", "2 uur", "presentatie"));
+        list.add(new Reservation("Kamer 22", "Vandaag", "morgen", "1 uur", "2 uur", "presentatie"));
         getData();
 
         mPagerAdapter = new MyResPagerAdapter(getApplicationContext(), list);
-        mPager.setAdapter(mPagerAdapter);
+        mPager.setAdapter(mPagerAdapter);STyu
 
     }
 

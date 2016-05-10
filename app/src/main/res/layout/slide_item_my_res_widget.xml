@@ -3,68 +3,167 @@
     android:id="@+id/widget_my_res"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/height_widget"
+    android:layout_height="wrap_content"
     android:background="@android:color/white">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/height_widget">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:orientation="vertical">
+            android:background="@color/colorAccent">
+
+            <ImageButton
+                android:id="@+id/widget_my_res_room_prev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_chevron_left_white"/>
 
             <TextView
                 android:id="@+id/widget_my_res_room"
-                android:layout_width="match_parent"
+                style="@style/titleStyle"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="18dp"
+                android:text="test"
                 android:textAlignment="center"
-                android:textColor="@android:color/black"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                style="@style/titleStyle" />
+                android:textColor="@android:color/white"
+                android:textStyle="bold"/>
 
-            <TextView
-                android:id="@+id/widget_my_res_date"
-                android:layout_width="match_parent"
+            <ImageButton
+                android:id="@+id/widget_my_res_room_next"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:textAlignment="center"
-                style="@style/labelStyle" />
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_chevron_right_white"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="9">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2">
+                android:layout_weight="4"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/widget_my_res_btime"
-                    android:layout_width="0dp"
+                    android:id="@+id/widget_my_res_bdate"
+                    style="@style/subTextStyle"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    style="@style/labelStyle" />
+                    android:text="test"
+                    android:textAlignment="center"/>
 
-                <TextView
-                    android:id="@+id/widget_my_res_etime"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    style="@style/labelStyle" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_time"/>
+
+                        <TextView
+                            android:id="@+id/widget_my_res_btime"
+                            style="@style/labelStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="test"/>
+
+                    </LinearLayout>
+                </RelativeLayout>
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/widget_my_res_scenario"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                style="@style/labelStyle" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_arrow_forward"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/widget_my_res_edate"
+                    style="@style/subTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="test"
+                    android:textAlignment="center"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_time"/>
+
+                        <TextView
+                            android:id="@+id/widget_my_res_etime"
+                            style="@style/labelStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="test"/>
+
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
         </LinearLayout>
-    </RelativeLayout>
+
+        <TextView
+            style="@style/subTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Scenario"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/widget_my_res_scenario"
+            style="@style/labelStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="test"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
 </ScrollView>

@@ -5,14 +5,16 @@ package nl.secondchance.smartagenda.Models;
  */
 public class Reservation {
     private String mRoom;
-    private String mDate;
+    private String mBdate;
+    private String mEdate;
     private String mBtime;
     private String mEtime;
     private String mScenario;
 
-    public Reservation (String room, String date, String btime, String etime, String scenario) {
+    public Reservation (String room, String bdate, String edate, String btime, String etime, String scenario) {
         this.mRoom = room;
-        this.mDate = date;
+        this.mBdate = bdate;
+        this.mEdate = edate;
         this.mBtime = btime;
         this.mEtime = etime;
         this.mScenario = scenario;
@@ -26,12 +28,20 @@ public class Reservation {
         mRoom = room;
     }
 
-    public String getDate() {
-        return mDate;
+    public String getBdate() {
+        return mBdate;
     }
 
-    public void setDate(String date) {
-        mDate = date;
+    public void setBdate(String bdate) {
+        mBdate = bdate;
+    }
+
+    public String getEdate() {
+        return mEdate;
+    }
+
+    public void setEdate(String edate) {
+        mEdate = edate;
     }
 
     public String getBtime() {

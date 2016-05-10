@@ -11,7 +11,6 @@
     <string name="error_title">Oops! Er ging iets fout!</string>
     <string name="error_msg">Probeer het nog een keer.</string>
     <string name="error_positive_button_msg">OK</string>
-    <string name="network_unavailable_message">Netwerk in niet beschikbaar!</string>
-    <string name="title_activity_settings">SettingsActivity</string>
-    <string name="title_activity_reservation">ReservationActivity</string>
+    <string name="network_unavailable_message">Netwerk is niet beschikbaar!</string>
+
 </resources>
