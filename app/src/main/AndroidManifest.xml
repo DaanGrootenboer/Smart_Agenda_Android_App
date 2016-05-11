@@ -31,6 +31,12 @@
             android:label="@string/nav_title_reservation"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".ReservationOverviewActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/nav_title_reservation"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

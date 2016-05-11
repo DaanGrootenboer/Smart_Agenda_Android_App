@@ -68,7 +68,7 @@ public class HomeActivity extends AppCompatActivity
         getData();
 
         mPagerAdapter = new MyResPagerAdapter(getApplicationContext(), list);
-        mPager.setAdapter(mPagerAdapter);STyu
+        mPager.setAdapter(mPagerAdapter);
 
     }
 

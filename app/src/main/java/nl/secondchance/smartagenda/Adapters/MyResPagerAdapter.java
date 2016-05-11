@@ -2,11 +2,9 @@ package nl.secondchance.smartagenda.Adapters;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -28,8 +26,6 @@ public class MyResPagerAdapter extends PagerAdapter {
     @Bind(R.id.widget_my_res_btime) TextView mBtime;
     @Bind(R.id.widget_my_res_etime) TextView mEtime;
     @Bind(R.id.widget_my_res_scenario) TextView mScenario;
-    @Bind(R.id.widget_my_res_room_next) ImageButton mNextRoom;
-    @Bind(R.id.widget_my_res_room_prev) ImageButton mPrevRoom;
 
     public MyResPagerAdapter(Context context, ArrayList<Reservation> list) {
         mContext = context;

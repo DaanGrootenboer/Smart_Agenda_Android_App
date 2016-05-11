@@ -12,5 +12,6 @@
     <string name="error_msg">Probeer het nog een keer.</string>
     <string name="error_positive_button_msg">OK</string>
     <string name="network_unavailable_message">Netwerk is niet beschikbaar!</string>
+    <string name="title_activity_reservation_overview">ReservationOverviewActivity</string>
 
 </resources>
