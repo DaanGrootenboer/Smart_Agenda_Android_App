@@ -1,8 +1,10 @@
 package nl.secondchance.smartagenda.Fragments;
 
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.text.format.DateFormat;
@@ -10,8 +12,13 @@ import android.widget.TimePicker;
 
 import java.util.Calendar;
 
+
 public class TimePickerFragment extends DialogFragment
         implements TimePickerDialog.OnTimeSetListener {
+
+    private int hour;
+    private int min;
+    private int viewId;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -26,6 +33,7 @@ public class TimePickerFragment extends DialogFragment
     }
 
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-        // Do something with the time chosen by the user
+        // Do something with the time chosen by the user\
     }
+
 }

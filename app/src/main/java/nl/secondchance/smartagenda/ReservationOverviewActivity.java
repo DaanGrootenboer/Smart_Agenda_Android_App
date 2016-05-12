@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -19,6 +20,8 @@ import nl.secondchance.smartagenda.Fragments.TimePickerFragment;
 public class ReservationOverviewActivity extends AppCompatActivity {
     private String roomName;
     private Bundle extras;
+
+    public static final String TAG_VIEW_ID = "View id";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,14 +61,14 @@ public class ReservationOverviewActivity extends AppCompatActivity {
 
     }
 
-    @OnClick(R.id.select_begin_time_button)
-    public void showTimePickerDialog() {
+    @OnClick({R.id.select_begin_time_button, R.id.select_end_time_button})
+    public void showTimePickerDialog(View view) {
         DialogFragment newFragment = new TimePickerFragment();
         newFragment.show(getSupportFragmentManager(), "timePicker");
     }
 
-    @OnClick(R.id.select_begin_date_button)
-    public void showDatePickerDialog() {
+    @OnClick({R.id.select_begin_date_button, R.id.select_end_date_button})
+    public void showDatePickerDialog(View view) {
         DialogFragment newFragment = new DatePickerFragment();
         newFragment.show(getSupportFragmentManager(), "datePicker");
     }
