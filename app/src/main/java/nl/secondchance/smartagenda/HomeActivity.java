@@ -76,7 +76,7 @@ public class HomeActivity extends AppCompatActivity
         if (!login) {
             Intent intent = new Intent(this, LoginActivity.class);
             this.startActivity (intent);
-            this.finishActivity (0);
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
