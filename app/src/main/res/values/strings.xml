@@ -16,15 +16,17 @@
     <string name="title_activity_login">Log in</string>
 
     <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
+    <string name="prompt_username">Username</string>
     <string name="prompt_password">Password (optional)</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="action_sign_up">Or register</string>
+    <string name="error_invalid_email">This username is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_incorrect_username_or_password">This could be incorrect</string>
     <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
+    <string name="permission_rationale">"Contacts permissions are needed for providing username
         completions."
     </string>
     <string name="dialog_room_average_column_title">Gemiddeld</string>
@@ -34,5 +36,6 @@
     <string name="dialog_room_lightlevel_row_title">Lichtniveau</string>
     <string name="dialog_room_action_reservation">Reserveer</string>
     <string name="dialog_action_cancel">Annuleer</string>
+    <string name="preference_userdata_file_key">Userdata</string>
 
 </resources>

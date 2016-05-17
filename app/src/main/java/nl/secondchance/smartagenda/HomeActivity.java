@@ -2,6 +2,7 @@ package nl.secondchance.smartagenda;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -16,9 +17,12 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,17 +35,24 @@ import nl.secondchance.smartagenda.Models.Reservation;
 
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    public static final String TAG = HomeActivity.class.getSimpleName();
+    private Boolean login;
+    private SharedPreferences sharedpreferences;
 
     @Bind(R.id.pager_my_res) ViewPager mPager;
     @Bind(R.id.toolbar) Toolbar mToolbar;
+    @Bind(R.id.nav_view) NavigationView navigationView;
+    private TextView mDisplayName;
+    private TextView mEmail;
+    private View header;
 
     private PagerAdapter mPagerAdapter;
     public ArrayList<Reservation> list = new ArrayList<Reservation>();
@@ -53,19 +64,34 @@ public class HomeActivity extends AppCompatActivity
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
 
+        sharedpreferences = getSharedPreferences(getString(R.string.preference_userdata_file_key), Context.MODE_PRIVATE);
+        login = sharedpreferences.getBoolean(LoginActivity.TAG_LOGIN, false);
+
+//        mDisplayName = (TextView) header.findViewById(R.id.nav_header_home_username);
+//        mEmail = (TextView) header.findViewById(R.id.nav_header_home_email);
+//
+//        mDisplayName.setText(sharedpreferences.getString(LoginActivity.TAG_USERDATEVALUES[1], "No name"));
+//        mEmail.setText(sharedpreferences.getString(LoginActivity.TAG_USERDATEVALUES[4], "No Mail"));
+
+        if (!login) {
+            Intent intent = new Intent(this, LoginActivity.class);
+            this.startActivity (intent);
+            this.finishActivity (0);
+        }
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        header = navigationView.getHeaderView(0);
 
         // dummie data
         list.add(new Reservation("Kamer 21", "Vandaag", "Morgen", "1 uur", "2 uur", "presentatie"));
         list.add(new Reservation("Kamer 22", "Vandaag", "morgen", "1 uur", "2 uur", "presentatie"));
-        getData();
+        //getUserData();
 
         mPagerAdapter = new MyResPagerAdapter(getApplicationContext(), list);
         mPager.setAdapter(mPagerAdapter);
@@ -125,67 +151,4 @@ public class HomeActivity extends AppCompatActivity
         return true;
     }
 
-    // TODO: Verander "getData" naar een betere naam
-    private void getData() {
-        // TODO: Url veranderen
-        String forecastUrl = "http://www.json-generator.com/api/json/get/cpQnDhKSJK?indent=2";
-
-        if (isNetworkAvailable()) {
-
-            OkHttpClient client = new OkHttpClient();
-            Request request = new Request.Builder()
-                    .url(forecastUrl)
-                    .build();
-
-            Call call = client.newCall(request);
-            call.enqueue(new Callback() {
-                @Override
-                public void onFailure(Call call, IOException e) {
-                    alertUserAboutError();
-                }
-
-                @Override
-                public void onResponse(Call call, Response response) throws IOException {
-                    try {
-                        String jsonData = response.body().string();
-                        if (response.isSuccessful()) {
-                            parseJson(jsonData);
-                        } else {
-                            alertUserAboutError();
-                        }
-                    }
-                    catch (IOException | JSONException e) {
-                        Log.e(TAG, "Exception caught: ", e);
-                    }
-                }
-
-            });
-        } else {
-            Toast.makeText(this, getString(R.string.network_unavailable_message),
-                    Toast.LENGTH_LONG).show();
-        }
-    }
-
-    // TODO: Verander "parseJson" naar een betere naam
-    private void parseJson(String jsonData) throws JSONException {
-        // TODO: JSON data gebruiken
-        Log.v(TAG, jsonData);
-    }
-
-    private boolean isNetworkAvailable() {
-        ConnectivityManager manager = (ConnectivityManager)
-                getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = manager.getActiveNetworkInfo();
-        boolean isAvailable = false;
-        if (networkInfo != null && networkInfo.isConnected()) {
-            isAvailable = true;
-        }
-
-        return isAvailable;
-    }
-
-    private void alertUserAboutError() {
-        AlertDialogFragment dialog = new AlertDialogFragment();
-        dialog.show(getFragmentManager(), "error_dialog");
-    }
 }
