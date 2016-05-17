@@ -88,7 +88,7 @@ public class Room {
         mIsAvailable = isAvailable;
     }
 
-    public boolean isHasScreen() {
+    public boolean hasScreen() {
         return mHasScreen;
     }
 

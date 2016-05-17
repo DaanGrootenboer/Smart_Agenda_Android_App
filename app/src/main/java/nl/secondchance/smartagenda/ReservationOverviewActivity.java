@@ -7,10 +7,7 @@ import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
-import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import nl.secondchance.smartagenda.Adapters.RoomListAdapter;
@@ -35,7 +32,7 @@ public class ReservationOverviewActivity extends AppCompatActivity {
             if(extras == null) {
                 roomName = null;
             } else {
-                roomName = extras.getString(RoomListAdapter.TAGROOMNAME);
+                roomName = extras.getString(RoomListAdapter.TAG_ROOM_NAME);
                 if (getSupportActionBar() != null) {
                     getSupportActionBar().setTitle(roomName);
                 }
